@@ -2,12 +2,10 @@ package utility;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.lang.String.valueOf;
 import static java.time.LocalDate.now;
@@ -69,20 +67,6 @@ public class Controller {
         }
     }
 
-
-
-    /* Selecting from a dropdown */
-    private Select findDropdownElement(WebDriver driver, String DropdownId) {
-        return new Select(driver.findElement(By.id(DropdownId))); // Find dropdown element
-    }
-    public void selectFromDropdown(WebDriver driver, String DropdownId, String pickFromDropdown) {
-        findDropdownElement(driver, DropdownId).selectByVisibleText(pickFromDropdown); // Selecting from the dropdown
-    }
-    public List<String> getSelected(WebDriver driver, String DropdownID) {
-        List<WebElement> selectedElements = findDropdownElement(driver, DropdownID).getAllSelectedOptions();
-        return selectedElements.stream().map(e -> e.getText()).collect(Collectors.toList());
-        // Getting all the Dropdown Element without looping
-    }
 
     /* Downloaded item checker */
     public static boolean isFileDownloaded(String fileName) {

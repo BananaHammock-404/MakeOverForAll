@@ -31,7 +31,7 @@ public class LoginRegisterPage {
         setTextByXpath(wait, "//input[@id='identifierId']", email);
     }
     public void clickGoogleNextButton() {
-        clickButtonByXpath(wait, "//span[contains(text(),'Next')]");
+        clickButtonByXpath(wait, "//span[contains(text(),'Berikutnya')]");
     }
     public void setGooglePasswordText(String password) {
         setTextByXpath(wait, "//input[@name='password']", password);
@@ -58,6 +58,7 @@ public class LoginRegisterPage {
             }
             //switch to the parent window
             driver.switchTo().window(parentWindow);
+            Thread.sleep(3000);
         }
     }
 }
