@@ -19,7 +19,7 @@ public class BuyNewProductTests extends BaseTests {
 
 
     @Test(priority = 1, description = "Log in to MAKE OVER")
-    public void successfulLoginNonXL() throws InterruptedException {
+    public void successfulLoginGmail() throws InterruptedException {
         //if (Controller.isElementDisplayed(wait, )
         homePage = new HomePage(driver,wait);
         homePage.clickXButtonPopup();
